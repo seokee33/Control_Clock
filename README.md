@@ -23,5 +23,5 @@
    - 왼쪽 두 자리: 타이머 카운트다운
    - 오른쪽 두 자리: 버튼 누름 횟수
   
-##결과
+## 결과
 ![KakaoTalk_20240618_203950070](https://github.com/seokee33/Control_Clock/assets/55632055/86afa8ac-fccf-4df1-a1b9-ecf51bfff64c)
