@@ -1,0 +1,10 @@
+[Inputs]
+clk
+rst
+button_in
+[Outputs]
+button_out
+[BiDir]
+[ATTRIBUTES]
+VeriModel button_debounce
+

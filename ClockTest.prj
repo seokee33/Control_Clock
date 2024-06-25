@@ -1,0 +1,3 @@
+verilog work "operatorremainder.v"
+verilog work "button_debounce.v"
+verilog work "ClockControl.v"

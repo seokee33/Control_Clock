@@ -1,0 +1,5 @@
+set -tmpdir "C:/Users/l/Documents/workspace/FPGA/Control_Clock/xst/projnav.tmp"
+set -xsthdpdir "C:/Users/l/Documents/workspace/FPGA/Control_Clock/xst"
+elaborate
+-ifn button_debounce.prj
+-ifmt mixed

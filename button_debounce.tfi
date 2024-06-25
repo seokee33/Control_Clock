@@ -1,0 +1,12 @@
+
+
+
+// Instantiate the module
+button_debounce instance_name (
+    .clk(clk), 
+    .rst(rst), 
+    .button_in(button_in), 
+    .button_out(button_out)
+    );
+
+

@@ -1,0 +1,5 @@
+MO ClockTest NULL ClockControl.v vlg14/_clock_test.bin 1718330604
+MO operatorremainder NULL operatorremainder.v vlg07/operatorremainder.bin 1718330604
+MO button_debounce NULL button_debounce.v vlg1C/button__debounce.bin 1718330604
+MO button_press_counter NULL ClockControl.v vlg17/button__press__counter.bin 1718171975
+MO ClockControl NULL ClockControl.v vlg41/_clock_control.bin 1718174215

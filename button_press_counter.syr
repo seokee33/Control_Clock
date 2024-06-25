@@ -1,0 +1,244 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.10 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.10 secs
+ 
+--> Reading design: button_press_counter.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "button_press_counter.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "button_press_counter"
+Output Format                      : NGC
+Target Device                      : xc3s200-4-ft256
+
+---- Source Options
+Top Module Name                    : button_press_counter
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 8
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "ClockControl.v" in library work
+Module <button_press_counter> compiled
+No errors in compilation
+Analysis of file <"button_press_counter.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <button_press_counter> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <button_press_counter>.
+Module <button_press_counter> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+INFO:Xst:2679 - Register <btn_counter> in unit <button_press_counter> has a constant value of 0000000000000000 during circuit operation. The register is replaced by logic.
+
+Synthesizing Unit <button_press_counter>.
+    Related source file is "ClockControl.v".
+WARNING:Xst:1781 - Signal <segments> is used but never assigned. Tied to default value.
+WARNING:Xst:646 - Signal <btn_counter> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Register <last_btn_state> equivalent to <btn_state> has been removed
+    Found 16x7-bit ROM for signal <$varindex0000> created at line 113.
+    Found 16x7-bit ROM for signal <$varindex0001> created at line 117.
+    Found 16x7-bit ROM for signal <$varindex0002> created at line 121.
+    Found 16x7-bit ROM for signal <$varindex0003> created at line 125.
+    Found 4-bit register for signal <an>.
+    Found 7-bit register for signal <seg>.
+    Found 1-of-4 decoder for signal <an$mux0000> created at line 111.
+    Found 1-bit register for signal <btn_state>.
+    Found 8-bit up counter for signal <clk_display>.
+    Found 16-bit up counter for signal <debounce_counter>.
+    Found 1-bit xor2 for signal <debounce_counter$xor0000> created at line 54.
+    Found 1-bit register for signal <last_btn_state>.
+    Found 31-bit up counter for signal <one_minute_counter>.
+    Found 4-bit register for signal <ones>.
+    Found 4-bit adder for signal <ones$addsub0000> created at line 94.
+    Found 17-bit up counter for signal <refresh_counter>.
+    Found 1-bit register for signal <refresh_flag>.
+    Found 7-bit 4-to-1 multiplexer for signal <seg$mux0000> created at line 111.
+    Found 4-bit register for signal <tens>.
+    Found 4-bit adder for signal <tens$addsub0000> created at line 91.
+    Summary:
+	inferred   4 ROM(s).
+	inferred   4 Counter(s).
+	inferred  22 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred   7 Multiplexer(s).
+	inferred   1 Decoder(s).
+Unit <button_press_counter> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 4
+ 16x7-bit ROM                                          : 4
+# Adders/Subtractors                                   : 2
+ 4-bit adder                                           : 2
+# Counters                                             : 4
+ 16-bit up counter                                     : 1
+ 17-bit up counter                                     : 1
+ 31-bit up counter                                     : 1
+ 8-bit up counter                                      : 1
+# Registers                                            : 6
+ 1-bit register                                        : 2
+ 4-bit register                                        : 3
+ 7-bit register                                        : 1
+# Multiplexers                                         : 1
+ 7-bit 4-to-1 multiplexer                              : 1
+# Decoders                                             : 1
+ 1-of-4 decoder                                        : 1
+# Xors                                                 : 1
+ 1-bit xor2                                            : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 4
+ 16x7-bit ROM                                          : 4
+# Adders/Subtractors                                   : 2
+ 4-bit adder                                           : 2
+# Counters                                             : 4
+ 16-bit up counter                                     : 1
+ 17-bit up counter                                     : 1
+ 31-bit up counter                                     : 1
+ 8-bit up counter                                      : 1
+# Registers                                            : 21
+ Flip-Flops                                            : 21
+# Multiplexers                                         : 1
+ 7-bit 4-to-1 multiplexer                              : 1
+# Decoders                                             : 1
+ 1-of-4 decoder                                        : 1
+# Xors                                                 : 1
+ 1-bit xor2                                            : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1293 - FF/Latch <last_btn_state> has a constant value of 0 in block <button_press_counter>. This FF/Latch will be trimmed during the optimization process.
+
+ERROR:Xst:528 - Multi-source in Unit <button_press_counter> on signal <N0>; this signal is connected to multiple drivers.
+Drivers are: 
+   Output signal of FDE instance <btn_state>
+   Signal <N0> in Unit <button_press_counter> is assigned to GND
+
+
+Total REAL time to Xst completion: 3.00 secs
+Total CPU time to Xst completion: 3.28 secs
+ 
+--> 
+
+Total memory usage is 4498060 kilobytes
+
+Number of errors   :    1 (   0 filtered)
+Number of warnings :    3 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
+

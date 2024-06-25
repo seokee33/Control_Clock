@@ -1,0 +1,19 @@
+NET "clk" LOC = "D9";    
+
+NET "rst" LOC = "P8";  
+
+NET "btn" LOC = "L13";     
+
+
+NET "seg[0]" LOC = "E14";
+NET "seg[1]" LOC = "G13";
+NET "seg[2]" LOC = "N15";
+NET "seg[3]" LOC = "P15";
+NET "seg[4]" LOC = "R16";
+NET "seg[5]" LOC = "F13";
+NET "seg[6]" LOC = "N16";
+
+NET "an[0]" LOC = "D14";
+NET "an[1]" LOC = "G14";
+NET "an[2]" LOC = "F14";
+NET "an[3]" LOC = "E13";

@@ -1,0 +1,10 @@
+
+
+
+// Instantiate the module
+operatorremainder instance_name (
+    .n(n), 
+    .is_multiple(is_multiple)
+    );
+
+

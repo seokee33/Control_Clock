@@ -1,0 +1,8 @@
+[Inputs]
+=n[35:0]=
+[Outputs]
+is_multiple
+[BiDir]
+[ATTRIBUTES]
+VeriModel operatorremainder
+
